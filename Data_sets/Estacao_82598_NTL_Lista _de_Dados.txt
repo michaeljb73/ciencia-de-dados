@@ -1,0 +1,1 @@
+Dia,"Mes","Ano","Hora (UTC)","Temp. [Hora] (C)","Umi. (%)","Pressao (hPa)","Vel. Vento (m","s)","Dir. Vento (m","s)","Nebulosidade (Decimos)","Insolacao (h)","Temp. Max. [Diaria] (h)","Temp. Min. [Diaria] (h)","Chuva [Diaria] (mm)"
