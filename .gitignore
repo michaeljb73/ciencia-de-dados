@@ -1,0 +1,4 @@
+# Ignora os arquivos de objetos de ambiente
+# e o histórico de comandos executados
+*.RData
+*.Rhistory
