@@ -89,3 +89,7 @@ metricas <- dados |>
 
 glimpse(metricas)
 ###############################################################################
+
+# Agrupar valores repetidos
+Marital_status <- dados$Marital_status
+unique(Marital_status[duplicated(Marital_status)])
