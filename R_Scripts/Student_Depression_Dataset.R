@@ -9,6 +9,7 @@
 # 1. Instalar e importar a biblioteca tidyverse
 library('tidyverse')
 library("dplyr")
+library(scales)
 
 ###############################################################################
 # 2. Definir o local de trabalho
@@ -90,6 +91,28 @@ metricas <- dados |>
 glimpse(metricas)
 ###############################################################################
 
-# Agrupar valores repetidos
-Marital_status <- dados$Marital_status
+###############################################################################
+# Agrupar valores repetidos. Identificando quais valores se repetem
+Marital_status <- dados$Marital_status # Selecionando a coluna
 unique(Marital_status[duplicated(Marital_status)])
+
+###############################################################################
+# Contando as opões de Marital_status
+Marital_status_count <- table(dados$Marital_status)
+# class(Marital_status_count)  # Tipo retornado por table
+
+length(dados$Marital_status) # Total dos dados
+print(Marital_status_count)  # Total dos valores(opções) repetidos
+
+# Porcentagem de cada opção
+Marital_status_percent <- round(prop.table(Marital_status_count) * 100, digits = 2)
+print(Marital_status_percent) # Percentuais
+
+# Porcentagem de cada opção. Outra modo.
+percentual <- setNames(as.vector(Marital_status_percent), names(Marital_status_percent))
+# class(percentual)
+
+Marital_status_percent <- percent(prop.table(percentual))
+print(Marital_status_percent)
+
+###############################################################################
