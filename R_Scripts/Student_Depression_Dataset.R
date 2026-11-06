@@ -132,10 +132,10 @@ print(Marital_status_percent)
 
 ###############################################################################
 
-#      ________                        _____            _       __
-#    / ____/ /___ ______________     / ___/____  _____(_)___ _/ /
-#   / /   / / __ `/ ___/ ___/ _ \    \__ \/ __ \/ ___/ / __ `/ / 
-#   / /___/ / /_/ (__  |__  )  __/   ___/ / /_/ / /__/ / /_/ / /  
+#          ________                        _____            _       __
+#        / ____/ /___ ______________     / ___/____  _____(_)___ _/ /
+#      / /   / / __ `/ ___/ ___/ _ \    \__ \/ __ \/ ___/ / __ `/ / 
+#    / /___/ / /_/ (__  |__  )  __/   ___/ / /_/ / /__/ / /_/ / /  
 #   \____/_/\__,_/____/____/\___/   /____/\____/\___/_/\__,_/_/ 
 
 
@@ -155,7 +155,7 @@ Family_background_count <- table(dados$Family_background)
 as.data.frame(Family_background_count) # Exibição
 
 # Percentual das classes sociais
-## class(Family_background)  # Tipo retornado por table
+class(Family_background)  # Tipo retornado por table
 
 ## Porcentagem de cada opção
 Family_background_percent <- round(prop.table(Family_background_count) * 100, digits = 2)
@@ -163,9 +163,11 @@ print(Family_background_percent) # Exibir Percentuais
 
 ## Porcentagem de cada opção. Outro maneira de exibir.
 percentual <- setNames(as.vector(Family_background_percent), names(Family_background_percent))
-# class(percentual)
+class(percentual)
 as.data.frame(percentual) # Exibir Percentuais
 
 # Exibir Percentuais no formato [num%]
 Family_background_percent <- percent(prop.table(percentual), accuracy = 0.01)
 print(Family_background_percent)
+
+###############################################################################
