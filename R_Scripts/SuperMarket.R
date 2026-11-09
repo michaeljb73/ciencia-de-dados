@@ -33,11 +33,12 @@ View(market_data)
 ###############################################################################
 
 # Quantos tipos de clientes temos?
-# Quantos clientes existem por gênero ?
-# Quantos produtos por linha ?
-# Total de vendas por cidade ?
+# Quantos clientes existem por gênero?
+# Quantos produtos por linha?
+# Total de vendas por cidade?
 # Qual a cidade que mais vendeu?
 # Qual forma de pagamento foi mais utilizada no total e por mês?
 # Qual a linha de produto mais vendida em quantidade, em valor, geral e mensal?
 # Quais os produtos mais bem avaliados, geral e por mês?
 # Quais as linhas produtos mais bem avaliadas, geral e por mês?
+# Quais os produtos e suas linhas mais consumidos por homens e mulheres?
