@@ -37,10 +37,16 @@ View(market_data_df)
 # ausentes (NA: Not Available)
 valores_indisponiveis <- anyNA(market_data)
 
-# Exibir nomes dos campos
+# No R, a função names() serve para consultar (ver) ou definir (alterar)
+# os nomes dos elementos de um objeto (como vetores, listas e data frames).
 names(market_data_df)
 
-# Exibir nomes dos campos e seus tipos
+# A função sapply() no R serve para aplicar uma função a cada elemento
+# de uma lista, vetor ou data frame e simplificar o resultado
+# (tentando transformá-lo automaticamente em um vetor
+# ou matriz, em vez de uma lista).No R, a função class() serve para
+# identificar ou definir a classe de um objeto, indicando ao R que tipo
+# de estrutura de dados ele é e como as funções e operadores devem manipulá-lo.
 market_data_types_df <- as.data.frame(sapply(market_data_df, class))
 
 ###############################################################################
