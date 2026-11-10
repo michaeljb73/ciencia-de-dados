@@ -24,6 +24,15 @@ print(num_rows)
 as.data.frame(market_data)
 View(market_data)
 
+# Existem dados NA(Not Available)
+anyNA(market_data)
+
+# Exibir nomes dos campos
+names(market_data)
+
+# Exibir nomes dos campos e seus tipos
+as.data.frame(sapply(market_data, class))
+
 ###############################################################################
 
 
@@ -32,7 +41,24 @@ View(market_data)
 #                 Medidas estatísticas, totais e porcentagens                 #
 ###############################################################################
 
-# Quantos tipos de clientes temos?
+# Quantos de cada tipos de clientes temos?
+table(market_data$Customer.type)
+customers <- table(market_data$Customer.type)
+
+member_customer <- customers['Member']
+normal_customer <- customers['Normal']
+
+# Percentuais
+percentuais <- round(prop.table(customers) * 100, digits =2)
+
+# Criando um vetor semelhante a um dicionário ou json
+vetor_percentuais <- setNames(as.vector(percentuais), names(percentuais))
+
+# cat(percentuais['Member'],"% dos clientes são membros(",member_customer,"), enquanto ",percentuais['Normal'],"% são clientes normais(",normal_customer,").")
+sprintf("%.2f%% dos clientes são membros(%.d), enquanto %.2f%% são normais %.d",percentuais['Member'],member_customer,percentuais['Normal'],normal_customer)
+
+###############################################################################
+
 # Quantos clientes existem por gênero?
 # Quantos produtos por linha?
 # Total de vendas por cidade?
