@@ -21,17 +21,27 @@ print(num_rows)
 ###############################################################################
 
 # Visualizações
-as.data.frame(market_data)
-View(market_data)
 
-# Existem dados NA(Not Available)
-anyNA(market_data)
+# A função as.data.frame() na linguagem R serve para converter (coercion)
+# outros tipos de objetos do R (como matrizes, listas, vetores ou tibbles)
+# em um data frame, ou para verificar e adaptar estruturas existentes.
+market_data_df <- as.data.frame(market_data)
+
+# No R, a função View() (com V maiúsculo) é usada para abrir uma planilha
+# interativa em formato de tabela para inspecionar data frames, matrizes ou
+# outras estruturas retangulares.
+View(market_data_df)
+
+# A função anyNA() na linguagem R é usada para verificar se um objeto
+# (como um vetor, matriz ou data frame) contém valores
+# ausentes (NA: Not Available)
+valores_indisponiveis <- anyNA(market_data)
 
 # Exibir nomes dos campos
-names(market_data)
+names(market_data_df)
 
 # Exibir nomes dos campos e seus tipos
-as.data.frame(sapply(market_data, class))
+market_data_types_df <- as.data.frame(sapply(market_data_df, class))
 
 ###############################################################################
 
