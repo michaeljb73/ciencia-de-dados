@@ -1,7 +1,7 @@
 # Carregando bibliotecas
-library(tidyverse)
-library(dplyr)
-library(scales)
+# library(tidyverse)
+# library(dplyr)
+# library(scales)
 
 ###############################################################################
 
@@ -71,7 +71,7 @@ percentuais <- round(prop.table(customers) * 100, digits =2)
 vetor_percentuais <- setNames(as.vector(percentuais), names(percentuais))
 
 # cat(percentuais['Member'],"% dos clientes são membros(",member_customer,"), enquanto ",percentuais['Normal'],"% são clientes normais(",normal_customer,").")
-sprintf("%.2f%% dos clientes são membros(%.d), enquanto %.2f%% são normais %.d",percentuais['Member'],member_customer,percentuais['Normal'],normal_customer)
+sprintf("Nos dados apresentados, %.2f%% dos clientes são membros(%.d), enquanto %.2f%% são normais(%.d).",percentuais['Member'],member_customer,percentuais['Normal'],normal_customer)
 
 ###############################################################################
 
