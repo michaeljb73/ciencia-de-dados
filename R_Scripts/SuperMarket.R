@@ -76,6 +76,12 @@ sprintf("Nos dados apresentados, %.2f%% dos clientes são membros(%.d), enquanto
 ###############################################################################
 
 # Quantos clientes existem por gênero?
+generos <- table(market_data$Gender)
+
+# Percentuais
+generos_percent <- round(prop.table(generos) * 100, digits = 2)
+
+
 # Quantos produtos por linha?
 # Total de vendas por cidade?
 # Qual a cidade que mais vendeu?
